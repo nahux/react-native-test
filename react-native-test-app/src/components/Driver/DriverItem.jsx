@@ -5,10 +5,10 @@ import StyledText from '../Common/StyledText'
 export default function DriverItem(props) {
   return (
     <View key={props.driverId} style={styles.container}>
-      <StyledText big bold>Code: {props.code ?? '-'}</StyledText>
-      <StyledText big>Name: {props.givenName} {props.familyName}</StyledText>
-      <StyledText>Nationality {props.nationality}</StyledText>
-      <StyledText>Birth Date {props.dateOfBirth}</StyledText>
+      <StyledText subheading bold>Code: {props.code ?? '-'}</StyledText>
+      <StyledText subheading secondary>Name: {props.givenName} {props.familyName}</StyledText>
+      <StyledText secondary>Nationality {props.nationality}</StyledText>
+      <StyledText secondary>Birth Date {props.dateOfBirth}</StyledText>
     </View>
   )
 }
