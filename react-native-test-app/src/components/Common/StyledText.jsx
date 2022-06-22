@@ -21,11 +21,24 @@ const styles = StyleSheet.create({
   subheading: {
     fontSize: theme.fontSizes.subheading,
   },
+  textAlignLeft: {
+    textAlign: 'left'
+  },
+  textAlignCenter: {
+    textAlign: 'center'
+  },
+  textAlignRight: {
+    textAlign: 'right'
+  }
 });
 
-export default function StyledText({ children, bold, primary, secondary, subheading, style, moreProps }) {
+export default function StyledText({ children, align, bold, primary, secondary, subheading, style, moreProps }) {
   const textStyles = [
     styles.text,
+    style,
+    align === 'left' && styles.textAlignCenter,
+    align === 'center' && styles.textAlignLeft,
+    align === 'right' && styles.textAlignRight,
     bold && styles.bold,
     primary && styles.colorPrimary,
     secondary && styles.colorSecondary,

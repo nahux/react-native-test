@@ -2,6 +2,7 @@ export default [
   {
     "driverId": "alesi",
     "url": "http://en.wikipedia.org/wiki/Jean_Alesi",
+    "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Jean_Alesi%2C_GIMS_2019%2C_Le_Grand-Saconnex_%28GIMS0047%29.jpg/800px-Jean_Alesi%2C_GIMS_2019%2C_Le_Grand-Saconnex_%28GIMS0047%29.jpg",
     "givenName": "Jean",
     "familyName": "Alesi",
     "dateOfBirth": "1964-06-11",
@@ -11,6 +12,7 @@ export default [
     "driverId": "badoer",
     "code": "BAD",
     "url": "http://en.wikipedia.org/wiki/Luca_Badoer",
+    "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Luca_Badoer_2021.jpg/800px-Luca_Badoer_2021.jpg",
     "givenName": "Luca",
     "familyName": "Badoer",
     "dateOfBirth": "1971-01-25",

@@ -1,14 +1,29 @@
 import React from 'react'
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet, Image } from 'react-native'
 import StyledText from '../Common/StyledText'
 
-export default function DriverItem(props) {
+const DriverDescription = (props) => {
+  return (
+    <View key={props.driverId} style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+      <View>
+        <StyledText align='center' bold>{props.nationality}</StyledText>
+        <StyledText align='center' secondary>Nationality</StyledText>
+      </View>
+      <View>
+        <StyledText align='center' bold>{props.dateOfBirth}</StyledText>
+        <StyledText align='center' secondary>Birth Date</StyledText>
+      </View>
+    </View>
+  )
+}
+
+const DriverItem = (props) => {
+  const DEFAULT_AVATAR = require('../../../assets/avatar.jpg');
   return (
     <View key={props.driverId} style={styles.container}>
-      <StyledText subheading bold>Code: {props.code ?? '-'}</StyledText>
-      <StyledText subheading secondary>Name: {props.givenName} {props.familyName}</StyledText>
-      <StyledText secondary>Nationality {props.nationality}</StyledText>
-      <StyledText secondary>Birth Date {props.dateOfBirth}</StyledText>
+      <Image style={styles.image} source={{ uri: props.imgUrl ?? DEFAULT_AVATAR }} accessibilityLabel='Driver Image' />
+      <StyledText subheading bold>{props.givenName} {props.familyName} {props.code ? ' - ' + props.code : ''}</StyledText>
+      <DriverDescription {...props} />
     </View>
   )
 }
@@ -18,5 +33,13 @@ const styles = StyleSheet.create({
     padding: 20,
     paddingBottom: 5,
     paddingTop: 5
+  },
+  image: {
+    width: 40,
+    height: 40,
+    marginBottom: 1,
+    borderRadius: 4
   }
 })
+
+export default DriverItem;
